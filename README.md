@@ -1,5 +1,7 @@
 # Implementação de uma API de cadastro de pessoas utilizando os princípios da Clean Architecture
 
+> :building_construction: Work in progress...
+
 Este repositório apresenta um API de cadastro de pessoas desenvolvido seguindo os princípios da ***Clean Architecture***. O objetivo aqui é me ajudar na consolidação dos conceitos que venho estudando sobre esse tema de arquitetura limpa.
 
 Adicionalmente, este estudo dirigido se apoia na interpretação deste vídeo: [Desenvolvendo API com Arquitetura Limpa: Aprenda na Prática!](https://www.youtube.com/watch?v=MsskoOicoQo).
@@ -38,3 +40,4 @@ A API possui apenas dois endpoints: um para cadastrar pessoa e outro para listar
 - Não há nenhuma validação dos dados de entrada;
 - O banco de dados utilizado aqui é o H2;
 - O projeto requer Java 21 ou superior para ser executado.
+
