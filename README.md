@@ -37,7 +37,7 @@ As setas da imagem acima representa a regra da dependência que diz: **camadas m
 
 A API possui apenas dois endpoints: um para cadastrar pessoa e outro para listar todas as pessoas cadastradas. Então aqui vai algumas observações:
 - Não há *swagger* disponível. Os endpoints podem ser utilizados e seus contratos conhecidos utilizando a *collection do postman* disponível na pasta `postman-collection`;
+- O código fonte está na pasta `person-api`;
 - Não há nenhuma validação dos dados de entrada;
 - O banco de dados utilizado aqui é o H2;
-- O projeto requer Java 21 ou superior para ser executado e seu código fonte está na pasta `person-api`.
-
+- O projeto requer Java 21 ou superior para ser executado.
