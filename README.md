@@ -92,3 +92,15 @@ com.rochards.registerapi.person
 |   |   |- PersonRepository.java
 |-- CleanArchPersonApiApplication.java
 ```
+
+#### Analisando a partir do pacote base `core`
+
+O pacote base `core` concentra as regras de negócio da aplicação e da organização. Dois elementos da figura acima podem ser facilmente notados dentro dos pacotes`entites`e `usecases`. Os demais pacotes também fazem parte da regra negócio. 
+
+Um atenção especial ao pacote `gateways`: este não representa um elemento da camada de *Interface Adapters*, mas é apenas a forma de termos um contrato definido com as operações que atendem a necessidade da aplicação. Elementos de camadas mais externas vão de fato prover implementações concretas para as interfaces declaradas aqui.
+
+O que podemos afirmar com certeza é que nenhuma classe do pacote base `core` está importando algo de alguma camada mais externa, <mark>respeitando assim a regra da dependência</mark>.
+
+#### Analisando a partir do pacote base `infrastructure`
+
+Com o entendimento atual que tenho da proposta da arquitetura limpa, creio que este pacote não estruturado de uma forma a respeitar as camadas propostas pelo autor. Por exemplo, os *controllers* estão claramente dependendo de anotações do *Framework Spring*
