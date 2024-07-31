@@ -1,12 +1,10 @@
 # Implementação de uma API de cadastro de pessoas utilizando os princípios da Clean Architecture
 
-> :building_construction: Work in progress...
-
 Este repositório apresenta um API de cadastro de pessoas desenvolvido seguindo os princípios da ***Clean Architecture***. O objetivo aqui é me ajudar na consolidação dos conceitos que venho estudando sobre esse tema de arquitetura limpa.
 
-Adicionalmente, este estudo dirigido se apoia na interpretação deste vídeo: [Desenvolvendo API com Arquitetura Limpa: Aprenda na Prática!](https://www.youtube.com/watch?v=MsskoOicoQo).
+Adicionalmente, este estudo dirigido se apoia na proposta deste vídeo: [Desenvolvendo API com Arquitetura Limpa: Aprenda na Prática!](https://www.youtube.com/watch?v=MsskoOicoQo).
 
-Para uma leitura mais aprofundado do tema, você pode acessar a publicação original do autor em [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html).
+Para uma leitura mais aprofundada do tema, você pode acessar a publicação original do autor em [The Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html).
 
 ## Uma breve revisão sobre a Clean Architecture
 
@@ -53,7 +51,7 @@ A API possui apenas dois endpoints: um para cadastrar pessoa e outro para listar
 - Não há *swagger* disponível. Os endpoints podem ser utilizados e seus contratos conhecidos utilizando a *collection do postman* disponível na pasta `postman-collection`;
 - O código fonte está na pasta `person-api`;
 - Não há nenhuma validação dos dados de entrada;
-- O banco de dados utilizado aqui é o H2, poden ser acessado pelo console em `http://localhost:8080/h2-console`;
+- O banco de dados utilizado aqui é o H2, podendo ser acessado pelo console em `http://localhost:8080/h2-console`;
 - O projeto requer Java 21 ou superior para ser executado.
 
 
@@ -97,7 +95,7 @@ com.rochards.registerapi.person
 
 O pacote base `core` concentra as regras de negócio da aplicação. Dois elementos da figura acima podem ser facilmente notados dentro dos pacotes`entites`e `usecases`. Os demais pacotes também fazem parte da regra negócio. 
 
-Um atenção especial ao pacote `gateways`: este não representa um elemento da camada de *Interface Adapters*, mas é apenas a forma de termos um contrato definido com as operações que atendem a necessidade da aplicação. Elementos de camadas mais externas vão de fato prover implementações concretas para as interfaces declaradas aqui.
+Um atenção especial ao pacote `gateways`: este não representa um elemento da camada de *Interface Adapters*, mas é apenas para favorecer a inversão de dependência, uma vez que nossos casos de uso não devem importar classes com implementações concretas dessas operações. Elementos de camadas mais externas vão de fato prover implementações concretas para as interfaces declaradas aqui.
 
 O que podemos afirmar com certeza é que nenhuma classe do pacote base `core` está importando algo de alguma camada mais externa, <mark>respeitando assim a regra da dependência</mark>.
 
