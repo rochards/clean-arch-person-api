@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import java.util.Objects;
 
 @Entity(name = "TB_PERSON")
-public class PersonEntity {
+public class PersonModel {
 
     @Id
     @GeneratedValue
@@ -21,10 +21,10 @@ public class PersonEntity {
      * @deprecated for JPA usage
      */
     @Deprecated
-    public PersonEntity() {
+    public PersonModel() {
     }
 
-    public PersonEntity(String name, String document, PersonType type) {
+    public PersonModel(String name, String document, PersonType type) {
         this.name = name;
         this.document = document;
         this.type = type;
@@ -67,7 +67,7 @@ public class PersonEntity {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PersonEntity that = (PersonEntity) o;
+        PersonModel that = (PersonModel) o;
         return Objects.equals(name, that.name) && Objects.equals(document, that.document) && type == that.type;
     }
 
