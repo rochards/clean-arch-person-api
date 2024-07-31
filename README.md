@@ -53,7 +53,7 @@ A API possui apenas dois endpoints: um para cadastrar pessoa e outro para listar
 - Não há *swagger* disponível. Os endpoints podem ser utilizados e seus contratos conhecidos utilizando a *collection do postman* disponível na pasta `postman-collection`;
 - O código fonte está na pasta `person-api`;
 - Não há nenhuma validação dos dados de entrada;
-- O banco de dados utilizado aqui é o H2;
+- O banco de dados utilizado aqui é o H2, poden ser acessado pelo console em `http://localhost:8080/h2-console`;
 - O projeto requer Java 21 ou superior para ser executado.
 
 
@@ -88,14 +88,14 @@ com.rochards.registerapi.person
 |   |-- gateways
 |   |   |- PersonRepositoryGateway.java
 |   |-- persistence
-|   |   |- PersonEntity.java
+|   |   |- PersonModel.java
 |   |   |- PersonRepository.java
 |-- CleanArchPersonApiApplication.java
 ```
 
 #### Analisando a partir do pacote base `core`
 
-O pacote base `core` concentra as regras de negócio da aplicação e da organização. Dois elementos da figura acima podem ser facilmente notados dentro dos pacotes`entites`e `usecases`. Os demais pacotes também fazem parte da regra negócio. 
+O pacote base `core` concentra as regras de negócio da aplicação. Dois elementos da figura acima podem ser facilmente notados dentro dos pacotes`entites`e `usecases`. Os demais pacotes também fazem parte da regra negócio. 
 
 Um atenção especial ao pacote `gateways`: este não representa um elemento da camada de *Interface Adapters*, mas é apenas a forma de termos um contrato definido com as operações que atendem a necessidade da aplicação. Elementos de camadas mais externas vão de fato prover implementações concretas para as interfaces declaradas aqui.
 
@@ -103,4 +103,9 @@ O que podemos afirmar com certeza é que nenhuma classe do pacote base `core` es
 
 #### Analisando a partir do pacote base `infrastructure`
 
-Com o entendimento atual que tenho da proposta da arquitetura limpa, creio que este pacote não estruturado de uma forma a respeitar as camadas propostas pelo autor. Por exemplo, os *controllers* estão claramente dependendo de anotações do *Framework Spring*
+Com o entendimento atual que tenho da proposta da arquitetura limpa, creio que este pacote não está estruturado de uma forma a respeitar as camadas sugeridas pelo autor. Por exemplo, os *controllers* estão claramente dependendo de anotações do *Framework Spring*. Particularmente não vejo mal algum esse cruzamente de dependências acontecendo nesta chamada.
+
+
+## Contribuindo
+
+Se possui dúvidas, críticas ou sugestões sobre o texto apresentado aqui, sinta-se livre para abrir um *issue*.
